@@ -1,5 +1,5 @@
 /datum/interaction/lewd/jack
-	description = "Jerk yourself off."
+	description = "Подрочить."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_user_penis = REQUIRE_EXPOSED
@@ -10,19 +10,16 @@
 
 /datum/interaction/lewd/jack/display_interaction(mob/living/user)
 	var/message
-	var/t_His = user.p_their()
-	var/t_Him = user.p_them()
-	var/genital_name = user.get_penetrating_genital_name()
 
 	if(user.is_fucking(user, CUM_TARGET_HAND))
-		message = "[pick("jerks [t_Him]self off.",
-			"works [t_His] shaft.",
-			"strokes [t_His] [genital_name].",
-			"wanks [t_His] [genital_name] hard.")]"
+		message = "[pick("дрочит свой член.",
+			"прорабатывает свой член по всей длине.",
+			"водит рукой по члену.",
+			"берется рукой за член и слегка покачивает его.")]"
 	else
-		message = "[pick("wraps [t_His] hand around [t_His] [genital_name].",
-			"starts to stroke [t_His] [genital_name].",
-			"starts playing with [t_His] [genital_name].")]"
+		message = "[pick("берется рукой за свой член.",
+			"начинает дрочить себе рукой.",
+			"развлекается рукой со своим членом.")]"
 		user.set_is_fucking(user, CUM_TARGET_HAND, user.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/bang1.ogg',

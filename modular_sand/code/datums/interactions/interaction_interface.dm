@@ -52,7 +52,7 @@
 	var/mob/living/self = user
 	//Getting info
 	.["isTargetSelf"] = target == self
-	.["interactingWith"] = target != self ? "Interacting with \the [target]..." : "Interacting with yourself..."
+	.["interactingWith"] = target != self ? "взаимодействие с [target]..." : "взаимодействие с собой..."
 	.["selfAttributes"] = self.list_interaction_attributes(self)
 	if(target != self)
 		.["theirAttributes"] = target.list_interaction_attributes(self)
@@ -66,7 +66,7 @@
 				continue
 			var/list/interaction = list()
 			interaction["key"] = I.type
-			var/description = replacetext(I.description, "%COCK%", self.has_penis() ? "cock" : "strapon")
+			var/description = replacetext(I.description, "%COCK%", self.has_penis() ? "член" : "страпон")
 			interaction["desc"] = description
 			if(istype(I, /datum/interaction/lewd))
 				var/datum/interaction/lewd/O = I
@@ -91,17 +91,17 @@
 			genital_entry["key"] = REF(genital) //The key is the reference to the object
 			var/visibility = "Invalid"
 			if(CHECK_BITFIELD(genital.genital_flags, GENITAL_THROUGH_CLOTHES))
-				visibility = "Always visible"
+				visibility = "Всегда видно"
 			else if(CHECK_BITFIELD(genital.genital_flags, GENITAL_UNDIES_HIDDEN))
-				visibility = "Hidden by underwear"
+				visibility = "Спрятано под нижним бельем"
 			else if(CHECK_BITFIELD(genital.genital_flags, GENITAL_HIDDEN))
-				visibility = "Always hidden"
+				visibility = "Всегда спрятано"
 			else
-				visibility = "Hidden by clothes"
+				visibility = "спрятано под одеждой"
 
 			var/extras = "None"
 			if(CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_STUFF))
-				extras = "Allows egg stuffing"
+				extras = "Заполнение яйцами"
 
 			genital_entry["extras"] = extras
 			genital_entry["visibility"] = visibility
@@ -115,11 +115,11 @@
 		var/visibility = "Invalid"
 		switch(self.anus_exposed)
 			if(1)
-				visibility = "Always visible"
+				visibility = "Всегда видно"
 			if(0)
-				visibility = "Hidden by underwear"
+				visibility = "Спрятан под одеждой"
 			else
-				visibility = "Always hidden"
+				visibility = "Всегда спрятан"
 		simulated_ass["visibility"] = visibility
 		simulated_ass["possible_choices"] = GLOB.genitals_visibility_toggles - GEN_VISIBLE_NO_CLOTHES
 		genitals += list(simulated_ass)
@@ -192,11 +192,11 @@
 /proc/num_to_pref(num)
 	switch(num)
 		if(1)
-			return "Yes"
+			return "Да"
 		if(2)
-			return "Ask"
+			return "Нужно спросить"
 		else
-			return "No"
+			return "Нет"
 
 /datum/interaction_menu/ui_act(action, params)
 	if(..())
@@ -229,11 +229,11 @@
 				if(GEN_INSERT_EQUIPMENT)
 					var/obj/item/stuff = user.get_active_held_item()
 					if(!istype(stuff))
-						to_chat(user, span_warning("You need to hold an item to insert it!"))
+						to_chat(user, span_warning("Чтобы засунуть туда предмет - его нужно взять в руку!"))
 						return FALSE
 					stuff.insert_item_organ(user, actual_target, genital)
 				if(GEN_REMOVE_EQUIPMENT)
-					var/obj/item/selected_item = input(user, "Pick an item to remove", "Removing item") as null|anything in genital.contents
+					var/obj/item/selected_item = input(user, "Выбери предмет, который хочешь вытащить", "Вытаскивание предмета") as null|anything in genital.contents
 					if(selected_item)
 						if(!do_mob(user, actual_target, 5 SECONDS))
 							return FALSE

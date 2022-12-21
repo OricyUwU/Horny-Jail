@@ -12,15 +12,15 @@
 				switch(hole)
 					if(CUM_TARGET_VAGINA)
 						if(M.has_vagina(REQUIRE_EXPOSED))
-							message = (user == M) ? pick("fucks [possessive_verb] own pussy with \the [src]","shoves \the [src] into [possessive_verb] pussy", "jams \the [src] into [possessive_verb] pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
+							message = (user == M) ? pick("Трахает себя в киску, используя [src].","просовывает себе в киску [src].", "вставляет себе в киску [src].") : pick("засовывает [src] прямо в киску [M].", "трахает киску [M] с помощью [src].")
 							lust_amt = NORMAL_LUST
 					if(CUM_TARGET_ANUS)
 						if(M.has_anus(REQUIRE_EXPOSED))
-							message = (user == M) ? pick("fucks [possessive_verb] own ass with \the [src]","shoves \the [src] into [possessive_verb] ass", "jams \the [src] into [possessive_verb] ass") : pick("fucks [M]'s asshole with \the [src]", "jams \the [src] into [M]'s ass")
+							message = (user == M) ? pick("трахает себя в задницу, используя [src].","просовывает [src] себе в задницу.", "вставляет [src] себе прямо в задницу.") : pick("трахает задницу [M] своим [src]", "вставляет [src] прямо в задницу [M]")
 							lust_amt = NORMAL_LUST
 			if(BODY_ZONE_PRECISE_MOUTH)
 				if(M.has_mouth() && !M.is_mouth_covered())
-					message = (user == M) ? pick("fucks [possessive_verb] own mouth with \the [src]", "shoves \the [src] into [possessive_verb] mouth", "jams \the [src] into [possessive_verb] mouth") : pick("fucks [M]'s mouth with \the [src]", "jams \the [src] into [M]'s mouth")
+					message = (user == M) ? pick("засовывает себе в рот [src]ю", "заглатывает весь [src] целиком", "вставляет себе [src] прямо в рот [possessive_verb] mouth") : pick("трахает [M] в рот, используя [src]", "заталкивает своей рукой [src] в рот [M]")
 	if(message)
 		user.visible_message("<span class='lewd'>[user] [message].</span>")
 		M.handle_post_sex(lust_amt, null, user)

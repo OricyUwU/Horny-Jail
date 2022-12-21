@@ -443,11 +443,10 @@
 
 /mob/living/proc/do_breastsmother(mob/living/target)
 	var/message
-	var/u_His = p_their()
 	var/list/lines = list(
-		"squishes <b>[target]</b>'s face [pick(list("in between", "with"))] [u_His] [pick(GLOB.breast_nouns)]",
-		"presses [u_His] [pick(GLOB.breast_nouns)] into \the <b>[target]</b>'s face",
-		"shoves \the <b>[target]</b>'s whole head into [u_His] cleavage"
+		"сжимает лицо <b>[target]</b> [pick(list("между своих грудей.", "своей грудью."))]",
+		"вжимается грудью в лицо <b>[target]</b>",
+		"целиком обхватывает голову <b>[target]</b> своей грудью."
 		)
 
 	message = "<span class='lewd'>\The <b>[src]</b> [pick(lines)]</span>"
@@ -699,21 +698,17 @@
 /mob/living/proc/do_thighfuck(mob/living/target)
 	var/message
 	var/list/lines
-	var/u_His = p_their()
-	var/genital_name = get_penetrating_genital_name()
-	var/t_His = target.p_their()
 
 	if(is_fucking(target, CUM_TARGET_THIGHS))
 		lines = list(
-			"thrusts in and out of \the <b>[target]</b>'s [pick("pudgy ", "soft ", "")]thighs, making them jiggle",
-			"lustfully rolls [u_His] [genital_name] back and forth between \the <b>[target]</b>'s thighs",
-			"vigorously fucks \the <b>[target]</b>'s legs, making [u_His] tip pop in and out of [t_His] supple thighs"
+			"вставляет свой член между [pick("нежных ", "мягких ", "")]ляшек <b>[target]</b>, заставляя их трястись.",
+			"похабно просовывает свой член между ляшек <b>[target]</b>",
+			"уверенно двигает вперед-назад свой член, зажатый ляшками <b>[target]</b>, издавая мягкий звук"
 		)
 	else
 		lines = list(
-			"presses [u_His] tip against \the <b>[target]</b>'s [pick("pudgy ", "soft ", "")] thighs, soon shoving [u_His] whole lenght right in between them",
-			"presents [u_His] [genital_name] to \the <b>[target]</b>'s legs, ramming its full size right into [t_His] thigh lock",
-			"smooches \the <b>[target]</b>'s crotch with [u_His] throbbing tip, right before piercing between [t_His] thighs with [u_His] full [genital_name]"
+			"вставляет кончик своего члена между [pick("нежными ", "мягкими ", "")]ляшками <b>[target]</b>, пока он не зайдет полностью",
+			"приставляет головку своего члена к ляшкам <b>[target]</b>, после чего резко заходит на всю длину",
 		)
 		set_is_fucking(target, CUM_TARGET_THIGHS, getorganslot(ORGAN_SLOT_PENIS))
 
