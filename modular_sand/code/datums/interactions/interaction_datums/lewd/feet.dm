@@ -1,5 +1,5 @@
 /datum/interaction/lewd/grindface
-	description = "Feet grind their face."
+	description = "Потереть ноги об лицо"
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
@@ -9,40 +9,36 @@
 /datum/interaction/lewd/grindface/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	var/u_His = user.p_their()
-	var/t_His = partner.p_their()
-
 	var/shoes = user.get_shoes()
 
 	if(user.is_fucking(partner, GRINDING_FACE_WITH_FEET))
 		if(shoes)
-			message = "[pick(list("grinds [u_His] [shoes] into <b>[partner]</b>'s face.",
-				"presses [u_His] footwear down hard on <b>[partner]</b>'s face.",
-				"rubs off the dirt from [u_His] [shoes] onto <b>[partner]</b>'s face."))]</span>"
+			message = "[pick(list("трется своей обувью об лицо <b>[partner]</b>.",
+				"надавливает своей обувью на лицо <b>[partner]</b>.",
+				"вытирает грязь со своих ботинок об лицо <b>[partner]</b>."))]</span>"
 		else
-			message = "[pick(list("grinds [u_His] bare feet into <b>[partner]</b>'s face.",
-				"deviously covers <b>[partner]</b>'s mouth and nose with [u_His] bare feet.",
-				"runs the soles of [u_His] bare feet against <b>[partner]</b>'s lips."))]</span>"
+			message = "[pick(list("трется своей ступней об лицо <b>[partner]</b>.",
+				"закрывает рот и нос <b>[partner]</b> своей ступней.",
+				"обтирается своей ступней лицо и губы <b>[partner]</b>."))]</span>"
 
 	else if(user.is_fucking(partner, GRINDING_MOUTH_WITH_FEET))
 		if(shoes)
-			message = "[pick(list("pulls [u_His] [shoes] out of <b>[partner]</b>'s mouth and puts them on [t_His] face.",
-				"slowly retracts [u_His] [shoes] from <b>[partner]</b>'s mouth, putting them on [t_His] face instead."))]</span>"
+			message = "[pick(list("достает носок своих ботинок из рта <b>[partner]</b> и ставит его им на лицо.",
+				"медленно вытягивает свои ботинки из рта <b>[partner]</b>, ставя их им на лицо."))]</span>"
 		else
-			message = "[pick(list("pulls [u_His] bare feet out of <b>[partner]</b>'s mouth and rests them on [t_His] face instead.",
-				"retracts [u_His] bare feet from <b>[partner]</b>'s mouth and grinds them into [t_His] face instead."))]</span>"
+			message = "[pick(list("достает пальцы своих ступней из рта <b>[partner]</b> и кладет их им на лицо."))]</span>"
 
 		user.set_is_fucking(partner, GRINDING_FACE_WITH_FEET, null)
 
 	else
 		if(shoes)
-			message = "[pick(list("plants [u_His] [shoes] ontop of <b>[partner]</b>'s face.",
-				"rests [u_His] [shoes] on <b>[partner]</b>'s face and presses down hard.",
-				"harshly places [u_His] [shoes] atop <b>[partner]</b>'s face."))]</span>"
+			message = "[pick(list("укладывает свои ботинки поверх лица <b>[partner]</b>'s face.",
+				"закидывает свои ботинки на лицо <b>[partner]</b>, сильно прижимая их.",
+				"грубо гладет свои ботинки на лицо <b>[partner]</b>."))]</span>"
 		else
-			message = "[pick(list("plants [u_His] bare feet ontop of <b>[partner]</b>'s face.",
-				"rests [u_His] feet on <b>[partner]</b>'s face, smothering them.",
-				"positions [u_His] bare feet atop <b>[partner]</b>'s face."))]</span>"
+			message = "[pick(list("укладывает свои ступни поверх лица <b>[partner]</b>.",
+				"закидывает свои ступни на лицо <b>[partner]</b>, слегка надавливая.",
+				"кладет свои ступни на лицо <b>[partner]</b>."))]</span>"
 
 		user.set_is_fucking(partner, GRINDING_FACE_WITH_FEET, null)
 
@@ -54,7 +50,7 @@
 	partner.handle_post_sex(LOW_LUST, null, user)
 
 /datum/interaction/lewd/grindmouth
-	description = "Feet grind their mouth."
+	description = "Засунуть ноги в рот."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
@@ -64,42 +60,36 @@
 /datum/interaction/lewd/grindmouth/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	var/u_His = user.p_their()
-	var/t_His = partner.p_their()
-	var/t_Him = partner.p_them()
-	var/t_He = partner.p_they()
-	var/t_S = partner.p_s()
-
 	var/shoes = user.get_shoes()
 
 	if(user.is_fucking(partner, GRINDING_MOUTH_WITH_FEET))
 		if(shoes)
-			message = "[pick(list("roughly shoves [u_His] [shoes] deeper into <b>[partner]</b>'s mouth.",
-				"harshly forces another inch of [u_His] [shoes] into <b>[partner]</b>'s mouth.",
-				"presses [u_His] weight down, [u_His] [shoes] prying deeper into <b>[partner]</b>'s mouth."))]</span>"
+			message = "[pick(list("грубо засовывает свои ботинки глубже в рот <b>[partner]</b>.",
+				"беспечно засовывает свои ботинки на несколько сантиметров глубже в рот <b>[partner]</b>.",
+				"давит своим весом, засовывая свои [shoes] глубже и глубже в рот <b>[partner]</b>."))]</span>"
 		else
-			message = "[pick(list("wiggles [u_His] toes deep inside <b>[partner]</b>'s mouth.",
-				"crams [u_His] barefeet down deeper into <b>[partner]</b>'s mouth, making [t_Him] gag.",
-				"roughly grinds [u_His] feet on <b>[partner]</b>'s tongue."))]</span>"
+			message = "[pick(list("шевелит своими пальцами во рту <b>[partner]</b>.",
+				"пихает свои ступни глубже в рот <b>[partner]</b> пока те давятся",
+				"грубо играется своей ступней с языком <b>[partner]</b>."))]</span>"
 
 	else if(user.is_fucking(partner, GRINDING_FACE_WITH_FEET))
 		if(shoes)
-			message = "[pick(list("decides to force [u_His] [shoes] deep into <b>[partner]</b>'s mouth.",
-				"pressed the tip of [u_His] [shoes] against <b>[partner]</b>'s lips and shoves inwards."))]</span>"
+			message = "[pick(list("решает запихать свои ботинки поглубже в рот <b>[partner]</b>.",
+				"засовывает носок своих ботинок через губы <b>[partner]</b> все глубже и глубже."))]</span>"
 		else
-			message = "[pick(list("pries open <b>[partner]</b>'s mouth with [u_His] toes and shoves [u_His] bare foot in.",
-				"presses down [u_His] foot even harder, cramming [u_His] foot into <b>[partner]</b>'s mouth."))]</span>"
+			message = "[pick(list("pраскрывает своими пальцами рот <b>[partner]</b> и засовывает туда свою ступню.",
+				"давит своей ступней еще сильнее, запихивая ее еще глубже в рот <b>[partner]</b>."))]</span>"
 
 		user.set_is_fucking(partner, GRINDING_MOUTH_WITH_FEET, null)
 
 	else
 		if(shoes)
-			message = "[pick(list("readies themselves and in one swift motion, shoves [u_His] [shoes] into <b>[partner]</b>'s mouth.",
-				"grinds the tip of [u_His] [shoes] against <b>[partner]</b>'s mouth before pushing themselves in."))]</span>"
+			message = "[pick(list("на секунду медлит а затем одним движением засовывает свои ботинки прямо в рот <b>[partner]</b>.",
+				"трется носком своих ботинок об рот <b>[partner]</b>, после чего засовывает его внутрь."))]</span>"
 		else
-			message = "[pick(list("rubs [u_His] dirty bare feet across <b>[partner]</b>'s face before prying them into [t_His] muzzle.",
-				"forces [u_His] barefeet into <b>[partner]</b>'s mouth.",
-				"covers <b>[partner]</b>'s mouth and nose with [u_His] foot until [t_He] gasp[t_S] for breath, then shoves both feet inside before [t_He] can react."))]</span>"
+			message = "[pick(list("трется своими грязными ступнями по лицу <b>[partner]</b> прежде чем тыкнуть ими в нос.",
+				"проталкивает свою ступню прямо в рот <b>[partner]</b>.",
+				"закрывает своей ступней рот и нос <b>[partner]</b>, до попытки вздоха, после чего резко засовывает обе ступни в рот."))]</span>"
 		user.set_is_fucking(partner, GRINDING_MOUTH_WITH_FEET, null)
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_wet1.ogg',
@@ -109,7 +99,7 @@
 	partner.handle_post_sex(LOW_LUST, null, user)
 
 /datum/interaction/lewd/footjob
-	description = "Jerk them off with your foot."
+	description = "Подрочить своей ступней."
 	interaction_sound = null
 	require_user_num_feet = 1
 	require_user_feet = REQUIRE_ANY
@@ -118,17 +108,15 @@
 
 /datum/interaction/lewd/footjob/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	var/u_His = user.p_their()
 	var/shoes = user.get_shoes(TRUE)
-	var/genital_name = partner.get_penetrating_genital_name()
 
 	if(partner.is_fucking(src, CUM_TARGET_FEET))
-		message = "[pick("jerks \the <b>[partner]</b> off with [u_His] [shoes ? shoes : pick("foot", "sole")].",
-			"rubs [u_His] [shoes ? shoes : pick("foot", "sole", "toes")] on \the <b>[partner]</b>'s shaft.",
-			"works [u_His] [shoes ? shoes : pick("foot", "sole")] up and down on \the <b>[partner]</b>'s [genital_name].")]"
+		message = "[pick("касается члена <b>[partner]</b> своей [shoes ? shoes : pick("ступней", "пяткой")].",
+			"гладит член <b>[partner]</b> [shoes ? shoes : pick("своей ступней", "своей пяткой", "своими пальчиками")] по всей длине.",
+			"водит вверх и вниз по члену <b>[partner]</b> [shoes ? shoes : pick("своей ступней", "своей пяткой")] .")]"
 	else
-		message = "[pick("[shoes ? "positions [u_His] [shoes] on" :"positions [u_His] foot on"] \the <b>[partner]</b>'s [genital_name].",
-			"starts playing around with \the <b>[partner]</b>'s [genital_name], using [u_His] [shoes ? shoes :"foot"].")]"
+		message = "[pick("[shoes ? "кладет свои ботинки на" :"кладет свою ступню на"] член <b>[partner]</b>'s .",
+			"играет с членом <b>[partner]</b>, используя [shoes ? shoes :"ступню"].")]"
 		partner.set_is_fucking(user, CUM_TARGET_FEET, partner.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
@@ -140,23 +128,20 @@
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user)
 
 /datum/interaction/lewd/footjob/double
-	description = "Jerk them off with both of your feet."
+	description = "Подрочить обоими ступнями"
 	require_user_num_feet = 2
 
 /datum/interaction/lewd/footjob/double/display_interaction(mob/living/user, mob/living/partner)
 	var/message
-	var/u_His = user.p_their()
 	var/shoes = user.get_shoes()
-	var/genital_name = partner.get_penetrating_genital_name()
 
 	if(partner.is_fucking(user, CUM_TARGET_FEET))
-		message = "[pick("jerks \the <b>[partner]</b> off with [u_His] [shoes ? shoes : pick("feet", "soles")].",
-			"rubs [u_His] [shoes ? shoes : pick("feet", "soles")] on \the <b>[partner]</b>'s shaft.",
-			"rubs [shoes ? "[u_His] [shoes]" : "all of [u_His] toes"] on \the <b>[partner]</b>'s [genital_name].",
-			"works [u_His] [shoes ? shoes : pick("feet", "soles")] up and down on \the <b>[partner]</b>'s [genital_name].")]"
+		message = "[pick("касается члена <b>[partner]</b> своими [shoes ? shoes : pick("ступнями", "пятками")].",
+			"гладит член <b>[partner]</b> [shoes ? shoes : pick("своими ступнями", "своими пятками", "своими пальчиками")] по всей длине.",
+			"водит вверх и вниз по члену <b>[partner]</b> [shoes ? shoes : pick("своими ступнями", "своими пятками")] .")]"
 	else
-		message = "[pick("[shoes ? "wraps [u_His] [shoes] around" : "wraps [u_His] [pick("feet", "soles")] around"] \the <b>[partner]</b>'s [genital_name].",
-			"starts playing around with \the <b>[partner]</b>'s [genital_name], using [u_His] [shoes ? shoes : "feet"].")]"
+		message = "[pick("[shoes ? "обхватывает своими [shoes] " : "обхватывает своими [pick("ступнями", "пятками")] "] член <b>[partner]</b>.",
+			"играет с членом <b>[partner]</b>, своими [shoes ? shoes : "ступнями"].")]"
 		partner.set_is_fucking(user, CUM_TARGET_FEET, partner.getorganslot(ORGAN_SLOT_PENIS))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
@@ -168,25 +153,24 @@
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user)
 
 /datum/interaction/lewd/footjob/vagina
-	description = "Rub their vagina with your foot."
+	description = "Поиграть своей ступней с киской."
 	require_target_vagina = REQUIRE_EXPOSED
 	require_target_penis = null
 
 /datum/interaction/lewd/footjob/vagina/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	var/u_His = user.p_their()
 
 	var/shoes = partner.get_shoes(TRUE)
 
 	if(partner.is_fucking(user, CUM_TARGET_FEET))
-		message = "[pick("rubs \the <b>[partner]</b> clit with [u_His] [shoes ? shoes : pick("foot", "sole")].",
-			"rubs [u_His] [shoes ? shoes : pick("foot", "sole", "toes")] on \the <b>[partner]</b>'s coochie.",
-			"rubs [u_His] [shoes ? shoes : pick("foot", "sole", "toes")] on \the <b>[partner]</b>'s vagina.",
-			"rubs [u_His] foot up and down on \the <b>[partner]</b>'s pussy.")]"
+		message = "[pick("гладит клитор <b>[partner]</b> своей [shoes ? shoes : pick("ступней", "пяткой")].",
+			"водит [shoes ? shoes : pick("своей ступней", "своей пяткой", "своими пальчиками")] по киске <b>[partner]</b>.",
+			"играется [shoes ? shoes : pick("своей ступней", "своей пяткой", "своей пяткой")] с вагиной <b>[partner]</b>.",
+			"игриво водит ступней вверх и вниз по киске <b>[partner]</b>.")]"
 	else
-		message = "[pick("[shoes ? "positions [u_His] [shoes] on" : "positions [u_His] foot on"] \the <b>[partner]</b>'s pussy.",
-			"starts playing around with \the <b>[partner]</b>'s pussy, using [u_His] [shoes ? shoes : "foot"].")]"
+		message = "[pick("[shoes ? "касается своими ботинками" : "медленно касается своей ступней"] киски <b>[partner]</b>",
+			"раззадоривает киску <b>[partner]</b> используя [shoes ? shoes : "ступню"].")]"
 		partner.set_is_fucking(user, CUM_TARGET_FEET, partner.getorganslot(ORGAN_SLOT_VAGINA))
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',

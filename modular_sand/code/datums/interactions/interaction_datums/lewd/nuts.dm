@@ -1,5 +1,5 @@
 /datum/interaction/lewd/nuts
-	description = "Nuts to face."
+	description = "Отполировать свои шары"
 	interaction_sound = null
 	require_user_balls = REQUIRE_EXPOSED
 	require_target_mouth = TRUE
@@ -10,19 +10,17 @@
 /datum/interaction/lewd/nuts/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
-	var/u_His = user.p_their()
-	var/t_His = partner.p_their()
-
 	var/lust_increase = 1
 
 	if(user.is_fucking(partner, NUTS_TO_FACE))
 		message = pick(list(
-			"grabs the back of <b>[partner]</b>'s head and pulls it into [u_His] crotch.",
-			"jams [u_His] nutsack right into <b>[partner]</b>'s face.",
-			"roughly grinds [u_His] fat nutsack into <b>[partner]</b>'s mouth.",
-			"pulls out [u_His] saliva-covered nuts from <b>[partner]</b>'s violated mouth and then wipes off the slime onto [t_His] face."))
+			"хватает голову <b>[partner]</b> и вдавливает ее в свою промежность.",
+			"прижимается шарами к лицу <b>[partner]</b>",
+			"грубо водит шарами по языку <b>[partner]</b>",
+			"достает свои шары, вытирая их об лицо <b>[partner]</b>."))
 	else
-		message = pick(list("wedges a digit into the side of <b>[partner]</b>'s jaw and pries it open before using [u_His] other hand to shove [u_His] whole nutsack inside!", "stands with [u_His] groin inches away from [partner]'s face, then thrusting [u_His] hips forward and smothering [partner]'s whole face with [u_His] heavy ballsack."))
+		message = pick(list("оттягивает уголок рта <b>[partner]</b> пальцем, открывая им рот, после чего целиком запихивает туда свои шары!",
+		"стоит в сантиметрах от [partner], а затем шлепает своими шарами прямо по лицу!"))
 		user.set_is_fucking(partner, NUTS_TO_FACE, user.getorganslot(ORGAN_SLOT_PENIS))
 
 	/*playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/nuts1.ogg',
@@ -33,9 +31,9 @@
 	user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
 
 /datum/interaction/lewd/nut_smack
-	description = "Smack their nuts."
+	description = "Шлепнуть по шарам."
 	interaction_sound = 'modular_sand/sound/interactions/slap.ogg'
-	simple_message = "USER slaps TARGET's nuts!"
+	simple_message = "USER шлепает шары TARGET!"
 	require_target_balls = REQUIRE_EXPOSED
 	needs_physical_contact = TRUE
 	max_distance = 1
